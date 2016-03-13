@@ -57,10 +57,10 @@ public class ChooseAreaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_choose_area);
         listView = (ListView)findViewById(R.id.listView);
-        titleText = (TextView)findViewById(R.id.textView);
+        titleText = (TextView)findViewById(R.id.titleText);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dataList);
         listView.setAdapter(adapter);
         coolWeatherDB = CoolWeatherDB.getInstance(this);
@@ -69,15 +69,15 @@ public class ChooseAreaActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(currentLevel == LEVEL_PROVINCE){
                     selectProvince = provinceList.get(position);
-
+                    queryCityes();
                 }
                 else if (currentLevel == LEVEL_CITY){
                     selectCity = cityList.get(position);
-
+                    queryCoutries();
                 }
             }
         });
-        //
+        queryProvinces();
     }
 
     private void queryProvinces(){
@@ -202,6 +202,20 @@ public class ChooseAreaActivity extends AppCompatActivity {
     private void closeProgressDialog(){
         if(progressDialog != null){
             progressDialog.dismiss();
+        }
+    }
+
+    //捕获back键消息
+    @Override
+    public void onBackPressed() {
+        if(currentLevel == LEVEL_COUNTRY){
+            queryCityes();
+        }
+        else if(currentLevel == LEVEL_CITY){
+            queryProvinces();
+        }
+        else {
+            finish();
         }
     }
 }

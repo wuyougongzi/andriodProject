@@ -32,12 +32,12 @@ public class LoginActivity extends Activity{
             public void onClick(View v) {
                 String strUserName = editTextUserName.getText().toString();
                 String strPassWord = editTextPassword.getText().toString();
-                if(strUserName.compareTo("app") == 0 && strPassWord.compareTo("123456") == 0) {
+               // if(strUserName.compareTo("app") == 0 && strPassWord.compareTo("123456") == 0) {
                     //// TODO: 2016/3/8
                     //切换activity
                     Intent intent = new Intent(LoginActivity.this, ChooseAreaActivity.class);
                     startActivity(intent);
-                }
+            //    }
             }
         });
     }
