@@ -4,13 +4,6 @@ package com.example.myapplication.model;
  * Created by chongge on 2016/3/12.
  */
 public class Country {
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getCountryName() {
         return countryName;
@@ -36,10 +29,16 @@ public class Country {
         this.cityId = cityId;
     }
 
-    private int id;
+    public int getCountryId() {
+        return countryId;
+    }
+
+    public void setCountryId(int countryId) {
+        this.countryId = countryId;
+    }
+
+    private int countryId;
     private String countryName;
     private String countryCode;
     private int cityId;
-
-
 }

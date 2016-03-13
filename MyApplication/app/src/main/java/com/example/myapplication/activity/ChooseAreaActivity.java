@@ -69,7 +69,7 @@ public class ChooseAreaActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(currentLevel == LEVEL_PROVINCE){
                     selectProvince = provinceList.get(position);
-                    queryCityes();
+                     queryCityes();
                 }
                 else if (currentLevel == LEVEL_CITY){
                     selectCity = cityList.get(position);
@@ -98,7 +98,7 @@ public class ChooseAreaActivity extends AppCompatActivity {
     }
 
     private void queryCityes(){
-        cityList = coolWeatherDB.loadCities();
+        cityList = coolWeatherDB.loadCities(selectProvince.getProvinceId());
         if(cityList.size() > 0){
             dataList.clear();
             for(City city : cityList){
@@ -115,7 +115,7 @@ public class ChooseAreaActivity extends AppCompatActivity {
     }
 
     private void queryCoutries(){
-        countryList = coolWeatherDB.loadCountries();
+        countryList = coolWeatherDB.loadCountries(selectCity.getCityId());
         if(countryList.size() > 0){
             dataList.clear();
             for(Country country : countryList){
@@ -149,10 +149,10 @@ public class ChooseAreaActivity extends AppCompatActivity {
                     result = Utility.handleProvinceResponce(coolWeatherDB, response);
                 }
                 else if(type.equals("city")){
-                    result = Utility.handleCityResponse(coolWeatherDB, response, selectProvince.getId());
+                    result = Utility.handleCityResponse(coolWeatherDB, response, selectProvince.getProvinceId());
                 }
                 else if(type.equals("country")){
-                    result = Utility.handleCountryResponse(coolWeatherDB, response, selectCity.getId());
+                    result = Utility.handleCountryResponse(coolWeatherDB, response, selectCity.getCityId());
                 }
 
                 if(result){

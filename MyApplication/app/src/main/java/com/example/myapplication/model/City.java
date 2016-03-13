@@ -4,16 +4,12 @@ package com.example.myapplication.model;
  * Created by chongge on 2016/3/12.
  */
 public class City {
-    private int id;
-    private String cityName;
-    private String cityCode;
-    private int provinceId;
-
-    public int getId(){
-        return id;
+    public int getCityId() {
+        return cityId;
     }
-    public void setId(int id){
-        id = id;
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
 
     public String getCityName(){
@@ -36,4 +32,9 @@ public class City {
     public void setProvinceId(int provinceId) {
         provinceId = provinceId;
     }
+
+    private int cityId;
+    private String cityName;
+    private String cityCode;
+    private int provinceId;
 }

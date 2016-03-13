@@ -4,15 +4,12 @@ package com.example.myapplication.model;
  * Created by chongge on 2016/3/12.
  */
 public class Province {
-    private  int id;
-    private String provinceName;
-    private String provinceCode;
+    public int getProvinceId() {
+        return provinceId;
+    }
 
-   public int getId(){
-       return id;
-   }
-    public void setId(int id){
-        id = id;
+    public void setProvinceId(int provinceId) {
+        this.provinceId = provinceId;
     }
 
     public String getProvinceName(){
@@ -29,5 +26,7 @@ public class Province {
         provinceCode = code;
     }
 
-
+    private  int provinceId;
+    private String provinceName;
+    private String provinceCode;
 }
