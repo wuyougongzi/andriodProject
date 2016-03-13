@@ -35,7 +35,7 @@ public class LoginActivity extends Activity{
                 if(strUserName.compareTo("app") == 0 && strPassWord.compareTo("123456") == 0) {
                     //// TODO: 2016/3/8
                     //切换activity
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, ChooseAreaActivity.class);
                     startActivity(intent);
                 }
             }
@@ -55,8 +55,6 @@ public class LoginActivity extends Activity{
                 if(strUserName == "app" && strPassWord == "123456") {
                     //// TODO: 2016/3/8
                     //切换activity
-                    Intent intent = new Intent(this, MainActivity.class);
-                    startActivity(intent);
                 }
             }
             break;
