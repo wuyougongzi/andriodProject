@@ -16,21 +16,21 @@ public class City {
         return cityName;
     }
     public void setCityName(String name){
-        cityName = name;
+        this.cityName = name;
     }
 
     public String getCityCode(){
         return cityCode;
     }
     public void setCityCode(String code){
-        cityCode = code;
+        this.cityCode = code;
     }
 
     public int getProvinceId(){
         return provinceId;
     }
     public void setProvinceId(int provinceId) {
-        provinceId = provinceId;
+        this.provinceId = provinceId;
     }
 
     private int cityId;

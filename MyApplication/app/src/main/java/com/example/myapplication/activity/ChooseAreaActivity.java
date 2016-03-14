@@ -69,7 +69,7 @@ public class ChooseAreaActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(currentLevel == LEVEL_PROVINCE){
                     selectProvince = provinceList.get(position);
-                     queryCityes();
+                    queryCityes();
                 }
                 else if (currentLevel == LEVEL_CITY){
                     selectCity = cityList.get(position);
